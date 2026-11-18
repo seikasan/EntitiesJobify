@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>Entities.Jobify.Analyzers</AssemblyName>
+    <RootNamespace>EntitiesJobify.Analyzers</RootNamespace>
+    <PackageOutputDirectory>$(MSBuildThisFileDirectory)..\..\..\Packages\com.seikasan.entities-jobify\Editor\Analyzers</PackageOutputDirectory>
+    <UnityRoslynPath Condition="'$(UnityRoslynPath)' == ''">$(ProgramFiles)\Unity\Hub\Editor\6000.6.8f1\Editor\Data\MonoBleedingEdge\lib\mono\4.5</UnityRoslynPath>
+    <OutputPath>$(PackageOutputDirectory)\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>$(UnityRoslynPath)\System.Collections.Immutable.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>$(UnityRoslynPath)\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>$(UnityRoslynPath)\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

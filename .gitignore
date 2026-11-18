@@ -1,0 +1,4 @@
+# Entities Jobify build outputs
+/Tools/**/bin/
+/Tools/**/obj/
+!Tools/**/*.csproj

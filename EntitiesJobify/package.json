@@ -1,0 +1,25 @@
+{
+  "name": "com.seikasan.entities-jobify",
+  "displayName": "Entities Jobify",
+  "version": "1.0.0",
+  "unity": "6000.6",
+  "unityRelease": "8f1",
+  "description": "Analyzes SystemAPI.Query loops in ISystem.OnUpdate and offers Rider quick fixes that convert supported loops to IJobEntity.Run(), Schedule(), or ScheduleParallel().",
+  "author": {
+    "name": "seika",
+    "url": "https://github.com/seikasan/EntitiesJobify"
+  },
+  "hideInEditor": false,
+  "samples": [
+    {
+      "displayName": "Simple movement",
+      "description": "A two-component SystemAPI.Query loop that can be converted to run synchronously or scheduled sequentially or in parallel.",
+      "path": "Samples~/SimpleMovement"
+    },
+    {
+      "displayName": "Complex movement",
+      "description": "A movement query with branches, vector arithmetic, and tag filters.",
+      "path": "Samples~/ComplexMovement"
+    }
+  ]
+}

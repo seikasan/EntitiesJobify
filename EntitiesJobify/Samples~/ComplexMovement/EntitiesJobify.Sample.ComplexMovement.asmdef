@@ -1,0 +1,5 @@
+{
+  "name": "EntitiesJobify.Sample.ComplexMovement",
+  "references": ["Unity.Entities", "Unity.Collections", "Unity.Transforms"],
+  "autoReferenced": true
+}

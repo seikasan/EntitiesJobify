@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>10.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <AssemblyName>Entities.Jobify.Tests</AssemblyName>
+    <RiderHostDirectory Condition="'$(RiderHostDirectory)' == ''">$(LOCALAPPDATA)\Programs\Rider\lib\ReSharperHost</RiderHostDirectory>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Entities.Jobify.Analyzers\LoopAnalysis.cs" Link="LoopAnalysis.cs" />
+    <Compile Include="..\Entities.Jobify.Analyzers\EntitiesJobifyAnalyzer.cs" Link="EntitiesJobifyAnalyzer.cs" />
+    <Compile Include="..\Entities.Jobify.CodeFixes\EntitiesJobifyCodeFixProvider.cs" Link="EntitiesJobifyCodeFixProvider.cs" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>$(RiderHostDirectory)\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>$(RiderHostDirectory)\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>$(RiderHostDirectory)\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces">
+      <HintPath>$(RiderHostDirectory)\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
+      <HintPath>$(RiderHostDirectory)\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel">
+      <HintPath>$(RiderHostDirectory)\System.Composition.AttributedModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Runtime">
+      <HintPath>$(RiderHostDirectory)\System.Composition.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

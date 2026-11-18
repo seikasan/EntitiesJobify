@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>10.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>Entities.Jobify.CodeFixes</AssemblyName>
+    <RootNamespace>EntitiesJobify.CodeFixes</RootNamespace>
+    <RiderHostDirectory Condition="'$(RiderHostDirectory)' == ''">$(LOCALAPPDATA)\Programs\Rider\lib\ReSharperHost</RiderHostDirectory>
+    <PackageOutputDirectory>$(MSBuildThisFileDirectory)..\..\..\Packages\com.seikasan.entities-jobify\Editor\Analyzers\Rider</PackageOutputDirectory>
+    <OutputPath>$(PackageOutputDirectory)\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Entities.Jobify.Analyzers\LoopAnalysis.cs" Link="LoopAnalysis.cs" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>$(RiderHostDirectory)\System.Collections.Immutable.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>$(RiderHostDirectory)\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>$(RiderHostDirectory)\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces">
+      <HintPath>$(RiderHostDirectory)\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
+      <HintPath>$(RiderHostDirectory)\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel">
+      <HintPath>$(RiderHostDirectory)\System.Composition.AttributedModel.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="System.Composition.Runtime">
+      <HintPath>$(RiderHostDirectory)\System.Composition.Runtime.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="System.Threading.Channels">
+      <HintPath>$(RiderHostDirectory)\System.Threading.Channels.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.0" PrivateAssets="all" />
+    <PackageReference Include="Humanizer.Core" Version="2.14.1" PrivateAssets="all" />
+  </ItemGroup>
+</Project>
+
+
+
+

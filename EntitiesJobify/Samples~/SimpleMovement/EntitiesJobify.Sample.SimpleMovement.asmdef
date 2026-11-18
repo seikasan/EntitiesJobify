@@ -1,0 +1,5 @@
+{
+  "name": "EntitiesJobify.Sample.SimpleMovement",
+  "references": ["Unity.Entities", "Unity.Collections"],
+  "autoReferenced": true
+}
