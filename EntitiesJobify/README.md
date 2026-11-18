@@ -20,7 +20,7 @@ https://github.com/seikasan/EntitiesJobify.git?path=/EntitiesJobify
 
 `Run()` は元のループの位置で同期的に実行されます。`Schedule()` と `ScheduleParallel()` は `state.Dependency` を介して処理を登録します。スケジュールされたループは通常、`OnUpdate` の末尾に配置されます。ECB を使用するループを `ScheduleParallel()` に変換した場合、その直後に `state.Enabled = false;` を続けることができます。スコープ付きの `NativeArray` をキャプチャする並列ループは、元のループの位置で完了を待機します。
 
-対象の `ISystem` 型に `[BurstCompile]` が付いている場合、生成されるジョブにも `[BurstCompile]` が付与されます。`OnUpdate` メソッドのみに付与された属性は引き継がれません。生成される属性には Burst のデフォルトオプションが使用されます。実際に Burst コンパイルされるかどうかは、コードが Burst に対応しているか、および Unity プロジェクトで Burst が有効になっているかに依存します。
+`OnUpdate` メソッドに `[BurstCompile]` が付いている場合、生成されるジョブにも `[BurstCompile]` が付与されます。生成される属性には Burst のデフォルトオプションが使用されます。実際に Burst コンパイルされるかどうかは、コードが Burst に対応しているか、および Unity プロジェクトで Burst が有効になっているかに依存します。
 
 ## サポートされているループの形式
 

@@ -79,7 +79,7 @@ namespace EntitiesJobify.Analyzers
                 method.ContainsDirectives || containingStruct.ContainsDirectives)
                 return result;
 
-            result.IsBurstCompiled = burstCompile != null && HasAttribute(systemType, burstCompile);
+            result.IsBurstCompiled = burstCompile != null && (HasAttribute(systemType, burstCompile) || HasAttribute(methodSymbol, burstCompile));
 
             var systemApi = model.Compilation.GetTypeByMetadataName("Unity.Entities.SystemAPI");
             if (systemApi == null || loopExpression == null)

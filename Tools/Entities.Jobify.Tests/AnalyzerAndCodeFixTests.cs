@@ -1295,8 +1295,11 @@ namespace EntitiesJobify.Validation
             workspace.Dispose();
         }
 
-        [Fact]
-        public async Task OnUpdateBurstCompileIsNotInheritedByTheGeneratedRunJob()
+        [Theory]
+        [InlineData("Run")]
+        [InlineData("Schedule")]
+        [InlineData("ScheduleParallel")]
+        public async Task OnUpdateBurstCompileIsInheritedByTheGeneratedJob(string mode)
         {
             const string source = @"
 using Unity.Entities;
@@ -1323,12 +1326,11 @@ namespace EntitiesJobify.Validation
             await new EntitiesJobifyCodeFixProvider().RegisterCodeFixesAsync(new CodeFixContext(document, diagnostic,
                 (action, _) => actions.Add(action), CancellationToken.None));
 
-            var operations = await GetAction(actions, "IJobEntity に変換（Run）").GetOperationsAsync(CancellationToken.None);
+            var operations = await GetAction(actions, "IJobEntity に変換（" + mode + "）").GetOperationsAsync(CancellationToken.None);
             var changedDocument = Assert.IsType<ApplyChangesOperation>(Assert.Single(operations)).ChangedSolution.GetDocument(document.Id);
             var changedSource = (await changedDocument.GetTextAsync()).ToString();
 
-            Assert.Equal(1, changedSource.Split(new[] { "BurstCompile" }, StringSplitOptions.None).Length - 1);
-            Assert.DoesNotContain("[global::Unity.Burst.BurstCompile]", changedSource, StringComparison.Ordinal);
+            Assert.Equal(2, changedSource.Split(new[] { "BurstCompile" }, StringSplitOptions.None).Length - 1);
             var changedCompilation = (CSharpCompilation)await changedDocument.Project.GetCompilationAsync();
             Assert.Empty(changedCompilation.GetDiagnostics().Where(item => item.Severity == DiagnosticSeverity.Error));
             workspace.Dispose();
