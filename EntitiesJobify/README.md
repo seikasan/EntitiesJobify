@@ -9,7 +9,7 @@ Unity `6000.6.8f1` と Entities `6.6.0` を対象としています。このア�
 Unity Package Manager から、以下の Git URL を使用してパッケージを追加します。
 
 ```text
-https://github.com/seikasan/EntitiesJobify.git?path=/com.seikasan.entities-jobify
+https://github.com/seikasan/EntitiesJobify.git?path=/EntitiesJobify
 ```
 
 プロジェクトには `com.unity.entities` `6.6.0` が必要です。パッケージのインストール後に Rider でプロジェクトが更新されない場合は、Unity で **Assets > Open C# Project** を実行し、Rider でソリューションを再読み込みしてください。
